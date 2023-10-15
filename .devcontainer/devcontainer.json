@@ -1,0 +1,37 @@
+{
+	"name": "mesh-in-docker",
+	"build": {
+		"dockerfile": "../setup/Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+	"forwardPorts": [
+		3000
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+			"moby": true,
+			"installDockerBuildx": true,
+			"version": "latest",
+			"dockerDashComposeVersion": "v2"
+		},
+		"ghcr.io/devcontainers/features/rust:1": {
+			"version": "latest",
+			"profile": "default"
+		},
+		"ghcr.io/devcontainers-contrib/features/consul-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/envoy:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/nomad-asdf:2": {
+			"version": "latest"
+		}
+	}
+}
